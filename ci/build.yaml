@@ -1,0 +1,14 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: qlik/gradle
+    tag: latest
+
+inputs:
+- name: easy-api-gateway
+
+run:
+  path: easy-api-gateway/ci/build.sh

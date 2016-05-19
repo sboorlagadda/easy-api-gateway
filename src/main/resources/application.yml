@@ -1,0 +1,49 @@
+info:
+  component: API Gateway
+  
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+server:
+  port: 8765
+
+security:
+  user:
+    password: password
+
+zuul:
+  routes:
+    catalog: /catalog/**
+    reviews: /reviews/**
+    recommendations: /recommendations/**
+    user:
+      path: /user/**
+      url: http://localhost:9999/uaa/user
+
+spring:
+  oauth2:
+    sso:
+      home:
+        secure: false
+        path: /,/**/*.html
+    client:
+      accessTokenUri: http://localhost:9999/uaa/oauth/token
+      userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
+      clientId: acme
+      clientSecret: acmesecret
+    resource:
+      userInfoUri: http://localhost:9999/uaa/user
+
+
+logging:
+  level:
+    org.springframework.security: INFO
+    org.springframework.cloud.netflix: INFO
+    com.netflix.zuul: INFO
+    io.easystack.apigateway: DEBUG
+
