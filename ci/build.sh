@@ -4,5 +4,6 @@ export TERM=${TERM:-dumb}
 set -e
 
 pushd easy-api-gateway
-./gradlew clean bootRepackage
+./gradlew bootRepackage
 popd
+cp easy-api-gateway/build/libs/apigateway.jar builds/

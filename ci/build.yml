@@ -10,5 +10,8 @@ image_resource:
 inputs:
 - name: easy-api-gateway
 
+outputs:
+- name: builds
+
 run:
   path: easy-api-gateway/ci/build.sh
