@@ -3,7 +3,9 @@ export TERM=${TERM:-dumb}
 
 set -e
 
+VERSION=$(cat apigateway-version/version)
+
 pushd easy-api-gateway
-./gradlew bootRepackage
+./gradlew build -Pversion=$VERSION
 popd
-cp easy-api-gateway/build/libs/apigateway.jar builds/
+cp easy-api-gateway/build/libs/apigateway*.jar builds/

@@ -9,6 +9,7 @@ image_resource:
 
 inputs:
 - name: easy-api-gateway
+- name: apigateway-version
 
 outputs:
 - name: builds

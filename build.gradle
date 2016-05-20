@@ -15,7 +15,6 @@ apply plugin: 'idea'
 ext {
     name = 'API Gateway'
     description = 'Easy stack`s API gateway based on spring-cloud-zuul' 
-    version='0.0.1-SNAPSHOT'
     sourceEncoding='UTF-8'
 }
 
