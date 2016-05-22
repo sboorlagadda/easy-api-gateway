@@ -1,20 +1,5 @@
-info:
-  component: API Gateway
-  
-endpoints:
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
-  health:
-    sensitive: false
-
 server:
-  port: 8765
-
-security:
-  user:
-    password: password
+  port: 9000
 
 zuul:
   routes:
@@ -25,12 +10,10 @@ zuul:
       path: /user/**
       url: http://localhost:9999/uaa/user
 
-spring:
+security:
+  user:
+    password: password
   oauth2:
-    sso:
-      home:
-        secure: false
-        path: /,/**/*.html
     client:
       accessTokenUri: http://localhost:9999/uaa/oauth/token
       userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
@@ -46,4 +29,3 @@ logging:
     org.springframework.cloud.netflix: INFO
     com.netflix.zuul: INFO
     io.easystack.apigateway: DEBUG
-
