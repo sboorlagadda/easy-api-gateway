@@ -1,0 +1,19 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: concourse/docker-image-resource
+    tag: latest
+
+inputs:
+- name: easy-api-gateway
+- name: apigateway-version
+- name: apigateway-jar
+
+outputs:
+- name: builds
+
+run:
+  path: easy-api-gateway/ci/docker.sh
