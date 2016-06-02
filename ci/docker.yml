@@ -13,7 +13,7 @@ inputs:
 - name: apigateway-jar
 
 outputs:
-- name: builds
+- name: image
 
 run:
   path: easy-api-gateway/ci/docker.sh
