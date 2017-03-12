@@ -11,4 +11,4 @@ inputs:
 - name: git-pull-requests
 
 run:
-  path: git-pull-requests/ci/unit.sh
+  path: git-pull-requests/ci/prcheck.sh
