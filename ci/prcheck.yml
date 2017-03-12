@@ -8,7 +8,7 @@ image_resource:
     tag: latest
 
 inputs:
-- name: git-pull-request
+- name: git-pull-requests
 
 run:
   path: git-pull-request/ci/unit.sh
